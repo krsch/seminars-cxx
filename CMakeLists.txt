@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 project(seminar CXX)
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_EXTENSIONS OFF)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 set(RANGES_CXX_STD ${CMAKE_CXX_STANDARD} CACHE STRING "")
 set(GSL_CXX_STANDARD ${CMAKE_CXX_STANDARD} CACHE STRING "")
@@ -32,3 +33,5 @@ target_link_libraries(parallel PUBLIC range-v3::range-v3 pstl::ParallelSTL bench
 find_package(Threads)
 add_executable(parallel2 parallel2.cpp)
 target_link_libraries(parallel2 PUBLIC range-v3::range-v3 pstl::ParallelSTL Threads::Threads)
+
+add_executable(fs fs.cpp)

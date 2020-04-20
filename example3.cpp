@@ -164,3 +164,17 @@ int main() {
   }
   return 0;
 }
+
+void isGood(int a) {
+  if (a < 0)
+    throw 1;
+}
+
+void doBuy() {}
+void hit(int a) {
+  try {
+    isGood(a);
+    doBuy();
+  } catch (...) {
+  }
+}
