@@ -1,7 +1,6 @@
 #include <iostream>
 #include <system_error>
 #include "expected.hpp"
-#include <outcome.hpp>
 
 class my_category_t : public std::error_category {
 public:
