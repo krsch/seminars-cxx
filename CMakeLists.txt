@@ -15,6 +15,7 @@ if(NOT MINGW)
 endif(NOT MINGW)
 set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "")
 add_subdirectory(external/benchmark)
+add_subdirectory(external/pybind11)
 
 add_executable(example example.cpp)
 add_executable(example1 example1.cpp)
@@ -39,3 +40,6 @@ if(NOT MINGW)
 endif(NOT MINGW)
 
 add_executable(fs fs.cpp)
+pybind11_add_module(py_cpp py.cpp)
+
+add_executable(cpp cpp.cpp)
